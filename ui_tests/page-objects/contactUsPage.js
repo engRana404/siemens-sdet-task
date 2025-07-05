@@ -10,6 +10,8 @@ module.exports = {
     },
 
     testData : [
-        { email: "test@test.com", message: "Valid msg", orderRef: "1234567890"},
+        {subject: "Customer service", email: "test@test.com", orderRef: "1234567890", message: "This is a test message"},
+        {subject: "Customer service", email: "test@test.com", message: "This is a test message"},
+        {subject: "Customer service", email: "test@test.com", message: "This is a test message"},
     ],
 }

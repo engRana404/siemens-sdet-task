@@ -1,4 +1,5 @@
 const selectors = require("../page-objects/contactUsPage").selectors;
+const testData = require("../page-objects/contactUsPage").testData;
 
 module.exports = {
     before: function(browser) {
@@ -16,10 +17,10 @@ module.exports = {
 
     "Submit with all required fields filled": function(browser) {
         browser
-            .setValue(selectors.contactSubject, "Customer service")
-            .setValue(selectors.email, "test@test.com")
-            .setValue(selectors.orderRef, "1234567890")
-            .setValue(selectors.message, "This is a test message")
+            .setValue(selectors.contactSubject, testData[0].subject)
+            .setValue(selectors.email, testData[0].email)
+            .setValue(selectors.orderRef, testData[0].orderRef)
+            .setValue(selectors.message, testData[0].message)
             .uploadFile(selectors.fileUpload, "D:\\SDET\\siemens-sdet-task\\ui_tests\\uploads\\test.txt")
             .click(selectors.submitButton)
             .assert.textContains(selectors.successAlert, "Your message has been successfully sent to our team.")
@@ -27,9 +28,9 @@ module.exports = {
 
     "Submission without Optional Fields": function(browser) {
         browser
-            .setValue(selectors.contactSubject, "Customer service")
-            .setValue(selectors.email, "test@test.com")
-            .setValue(selectors.message, "This is a test message")
+            .setValue(selectors.contactSubject, testData[1].subject)
+            .setValue(selectors.email, testData[1].email)
+            .setValue(selectors.message, testData[1].message)
             .click(selectors.submitButton)
             .assert.textContains(selectors.successAlert, "Your message has been successfully sent to our team.")
     }
