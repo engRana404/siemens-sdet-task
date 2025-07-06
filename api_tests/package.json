@@ -1,0 +1,19 @@
+{
+  "name": "api_tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "dev": "node ./node_modules/mock-user-auth/bin/www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jest": "^30.0.4",
+    "mock-user-auth": "^1.0.15",
+    "supertest": "^7.1.1"
+  }
+}
