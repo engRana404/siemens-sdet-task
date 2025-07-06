@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="2">
+
+  <testsuite name="contactFormTests" id="contactFormTests"
+    errors="0" failures="0" hostname="" package="contactFormTests" skipped="0"
+    tests="2" time="7.951" timestamp="">
+  
+    <testcase name="Submit with all required fields filled" classname="contactFormTests" time="1.972" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Submission without Optional Fields" classname="contactFormTests" time="1.743" assertions="1">
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
