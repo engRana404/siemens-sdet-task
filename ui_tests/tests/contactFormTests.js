@@ -21,7 +21,7 @@ module.exports = {
             .setValue(selectors.email, testData[0].email)
             .setValue(selectors.orderRef, testData[0].orderRef)
             .setValue(selectors.message, testData[0].message)
-            .uploadFile(selectors.fileUpload, "D:\\SDET\\siemens-sdet-task\\ui_tests\\uploads\\test.txt")
+            .uploadFile(selectors.fileUpload, require('path').resolve(__dirname, '../uploads/test.txt'))
             .click(selectors.submitButton)
             .assert.textContains(selectors.successAlert, "Your message has been successfully sent to our team.")
     },
