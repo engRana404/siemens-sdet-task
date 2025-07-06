@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Install ChromeDriver
           command: |
-            npm install -g chromedriver --unsafe-perm
+            npm install -g chromedriver --unsafe-perm --allow-root
       - run:
           name: Run UI Tests
           command: |
