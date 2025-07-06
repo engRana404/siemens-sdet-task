@@ -1,22 +1,60 @@
 version: 2.1
 
 jobs:
-  install_chrome:
+  ui-tests:
     docker:
-      - image: cimg/base:stable
+      - image: cimg/node:18.17
     steps:
       - checkout
       - run:
+          name: Install UI Dependencies
+          command: |
+            cd ui_tests
+            npm install
+      - run:
           name: Install Chrome and ChromeDriver
           command: |
-            wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/google-linux-signing-key.gpg
-            echo "deb [arch=amd64 signed-by=/usr/share/keyrings/google-linux-signing-key.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google.list
+            curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /etc/apt/trusted.gpg.d/google.gpg
+            echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google.list
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
             npm install -g chromedriver
+      - run:
+          name: Run UI Tests
+          command: |
+            cd ui_tests
+            npm run test -- --env chrome
+
+  api-tests:
+    docker:
+      - image: cimg/node:18.17
+    steps:
+      - checkout
+      - run:
+          name: Install API Dependencies
+          command: |
+            cd api_tests
+            npm install
+      - run:
+          name: Start API Server in Background
+          command: |
+            cd api_tests
+            nohup npm run dev > server.log 2>&1 &
+      - run:
+          name: Wait for Server to Start
+          command: |
+            sleep 5  # Adjust if your server needs more time
+      - run:
+          name: Run API Tests
+          command: |
+            cd api_tests
+            npm run test
 
 workflows:
   version: 2
-  install_chrome_workflow:
+  test-workflow:
     jobs:
-      - install_chrome
+      - ui-tests
+      - api-tests:
+          requires:
+            - ui-tests
