@@ -15,5 +15,22 @@
     "jest": "^30.0.4",
     "mock-user-auth": "^1.0.15",
     "supertest": "^7.1.1"
+  },
+  "devDependencies": {
+    "jest-html-reporter": "^4.3.0"
+  },
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporter",
+        {
+          "outputPath": "reports/api-test-report.html",
+          "pageTitle": "API Test Report",
+          "includeFailureMsg": true,
+          "includeConsoleLog": true
+        }
+      ]
+    ]
   }
 }
