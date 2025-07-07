@@ -45,8 +45,8 @@ module.exports = {
       launch_url: 'https://nightwatchjs.org',
 
       screenshots: {
-        enabled: false,
-        path: 'screens',
+        enabled: true,
+        path: './screenshots',
         on_failure: true
       },
 
@@ -144,23 +144,21 @@ module.exports = {
       src_folders: ['examples/cucumber-js/features/step_definitions'],
 
       test_runner: {
-        // set cucumber as the runner
-        type: 'cucumber',
-
-        // define cucumber specific options
+        type: 'mocha',
         options: {
-          //set the feature path
-          feature_path: 'node_modules/nightwatch/examples/cucumber-js/*/*.feature',
-
-          // start the webdriver session automatically (enabled by default)
-          // auto_start_session: true
-
-          // use parallel execution in Cucumber
-          // workers: 2 // set number of workers to use (can also be defined in the cli as --workers=2
+          reporter: 'mochawesome',
+          reporterOptions: {
+            reportDir: 'mochawesome-report',
+            reportFilename: 'ui-test-report',
+            quiet: true,
+            overwrite: false,
+            html: true,
+            json: true
+          }
         }
-      }
-    },
+      },
 
+    },
     //////////////////////////////////////////////////////////////////////////////////
     // Configuration for when using the browserstack.com cloud service               |
     //                                                                               |
