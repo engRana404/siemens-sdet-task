@@ -6,7 +6,10 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "nightwatch --env chrome"
+    "test": "npm run clean && nightwatch --env chrome",
+    "clean": "node clean-results.js",
+    "clean:powershell": "powershell -Command \"if (Test-Path 'tests_output') { Remove-Item -Recurse -Force 'tests_output' }; if (Test-Path 'screenshots') { Remove-Item -Recurse -Force 'screenshots' }; if (Test-Path 'nightwatch-html-report') { Remove-Item -Recurse -Force 'nightwatch-html-report' }\"",
+    "test:clean": "npm run clean && npm run test"
   },
   "keywords": [],
   "author": "",

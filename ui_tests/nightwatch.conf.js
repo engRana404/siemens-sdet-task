@@ -32,6 +32,30 @@ module.exports = {
   // See https://nightwatchjs.org/guide/concepts/test-globals.html#external-test-globals
   globals_path : '',
 
+  // Global hooks to clean test results before running
+  globals: {
+    before: function(cb) {
+      const fs = require('fs');
+      const path = require('path');
+      
+      // Function to delete directory recursively
+      function deleteFolderRecursive(directoryPath) {
+        if (fs.existsSync(directoryPath)) {
+          fs.rmSync(directoryPath, { recursive: true, force: true });
+          console.log(`✅ Cleaned: ${directoryPath}`);
+        }
+      }
+      
+      // Clean test result directories
+      deleteFolderRecursive('./tests_output');
+      deleteFolderRecursive('./screenshots');
+      deleteFolderRecursive('./nightwatch-html-report');
+      
+      console.log('🧹 Test results cleaned before run');
+      cb();
+    }
+  },
+
   webdriver: {},
   
   test_workers: {
