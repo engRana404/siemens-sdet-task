@@ -119,7 +119,7 @@ module.exports = {
             '--no-sandbox',
             '--disable-dev-shm-usage',
             '--disable-gpu',
-            // '--headless',
+            '--headless',
             '--disable-web-security',
             '--allow-running-insecure-content',
             '--start-maximized'
