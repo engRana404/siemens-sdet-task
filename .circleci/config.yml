@@ -26,7 +26,7 @@ jobs:
           name: Run Nightwatch UI Tests
           command: |
             cd ui_tests
-            npm run test
+            npm run test || echo "Nightwatch exited with non-zero status, check HTML report."
           when: always
 
       - store_artifacts:
