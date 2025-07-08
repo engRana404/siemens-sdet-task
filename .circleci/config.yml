@@ -4,75 +4,74 @@ orbs:
   node: circleci/node@5
 
 jobs:
-  build-and-test:
-    executor: node/default
+  run-ui-tests:
+    docker:
+      - image: cimg/node:18.16-browsers
     steps:
       - checkout
 
       - run:
-          name: Install UI test dependencies
+          name: Install UI dependencies
           command: |
             cd ui_tests
-            npm install
-
-      - run:
-          name: Install Chrome & ChromeDriver
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y wget curl gnupg
-            wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-            echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-            sudo apt-get update
-            sudo apt-get install -y google-chrome-stable
-            cd ui_tests
-            npm install chromedriver --save-dev
+            npm ci
 
       - run:
           name: Start ChromeDriver
           command: |
-            npx chromedriver --port=9515 --url-base=wd/hub &
+            npx chromedriver --port=9515 --url-base=wd/hub > chromedriver.log 2>&1 &
             sleep 5
 
       - run:
-          name: Run UI tests
+          name: Run Nightwatch UI Tests
           command: |
             cd ui_tests
-            npm run test || true
-          environment:
-            CONTINUE_ON_FAIL: true
+            npm run test
+          when: always
 
       - store_artifacts:
           path: ui_tests/tests_output/nightwatch-html-report
           destination: nightwatch-report
 
-      - run:
-          name: Download wait-for-it.sh
-          command: |
-            curl -o wait-for-it.sh https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh
-            chmod +x wait-for-it.sh
+  run-api-tests:
+    docker:
+      - image: cimg/node:18.16
+    steps:
+      - checkout
 
       - run:
-          name: Start API server
+          name: Install API dependencies
           command: |
             cd api_tests
-            npm install
+            npm ci
+
+      - run:
+          name: Start Mock Server & Wait
+          command: |
+            cd api_tests
             nohup npm run dev > server.log 2>&1 &
-            ../wait-for-it.sh 127.0.0.1:3000 --timeout=30 --strict -- echo "Server is up!"
+            sleep 5
 
       - run:
-          name: Run API tests
+          name: Show server logs
+          command: cat api_tests/server.log
+
+      - run:
+          name: Run API Tests
           command: |
             cd api_tests
-            npm run test || true
-          environment:
-            CONTINUE_ON_FAIL: true
+            npm run test
+          when: always
+
+      - store_artifacts:
+          path: api_tests/report
+          destination: api-test-report
 
 workflows:
   version: 2
-  build-and-test-workflow:
+  full-test-workflow:
     jobs:
-      - build-and-test:
-          filters:
-            branches:
-              only:
-                - main
+      - run-ui-tests
+      - run-api-tests:
+          requires:
+            - run-ui-tests
