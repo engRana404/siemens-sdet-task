@@ -61,10 +61,9 @@ jobs:
       - run:
           name: Start Mock Server & Wait
           command: |
-            command: |
             npm run dev 
           background: true
-          
+
       - run:
           name: Wait for Server
           command: sleep 5
