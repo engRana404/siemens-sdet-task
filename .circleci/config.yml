@@ -14,20 +14,33 @@ jobs:
           name: Install UI dependencies
           command: |
             cd ui_tests
-            npm ci
+            npm install
+
+      - run:
+          name: Install Chrome & ChromeDriver
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y wget curl gnupg
+            wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+            echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
+            cd ui_tests
+            npm install chromedriver --save-dev
 
       - run:
           name: Start ChromeDriver
           command: |
-            npx chromedriver --port=9515 --url-base=wd/hub > chromedriver.log 2>&1 &
+            npx chromedriver --port=9515 --url-base=wd/hub &
             sleep 5
 
       - run:
-          name: Run Nightwatch UI Tests
+          name: Run UI tests
           command: |
             cd ui_tests
-            npm run test || echo "Nightwatch exited with non-zero status, check HTML report."
-          when: always
+            npm run test || true # Allow tests to fail without failing the job
+          environment:
+            CONTINUE_ON_FAIL: true
 
       - store_artifacts:
           path: ui_tests/tests_output/nightwatch-html-report
@@ -43,14 +56,18 @@ jobs:
           name: Install API dependencies
           command: |
             cd api_tests
-            npm ci
+            npm install
 
       - run:
           name: Start Mock Server & Wait
           command: |
-            cd api_tests
-            nohup npm run dev > server.log 2>&1 &
-            sleep 5
+            command: |
+            npm run dev 
+          background: true
+          
+      - run:
+          name: Wait for Server
+          command: sleep 5
 
       - run:
           name: Show server logs
