@@ -1,4 +1,4 @@
-const testData = require('../data/contactFormData');
+const testData = require('../test_data/contactFormData');
 
 module.exports = {
     beforeEach: function(browser) {
