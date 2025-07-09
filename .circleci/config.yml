@@ -61,6 +61,7 @@ jobs:
       - run:
           name: Start Mock Server & Wait
           command: |
+            cd api_tests
             npm run dev 
           background: true
 
