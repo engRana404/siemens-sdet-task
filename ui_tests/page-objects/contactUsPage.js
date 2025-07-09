@@ -1,17 +1,27 @@
+const contactUsPageCommands = {
+    fillRequiredFieldsAndSubmit: function(subject, email, message) {
+        return this
+            .setValue("@contactSubject", subject)
+            .setValue("@email", email)
+            .setValue("@message", message)
+            .click("@submitButton");
+    }
+}
+
+
 module.exports = {
-    selectors : {
+    url: "http://automationpractice.multiformis.com/index.php?controller=contact",
+    commands: [contactUsPageCommands],
+    elements : {
+        title: "h1.page-heading",
         contactSubject: "#id_contact",
         email: "#email",
         orderRef: "#id_order",
         message: "#message",
         fileUpload: "#fileUpload",
         submitButton: "#submitMessage",
-        successAlert: ".alert.alert-success"
+        successAlert: ".alert.alert-success",
+        errorAlert: 'div.alert-danger',
+        errorListItem: 'div.alert-danger li'
     },
-
-    testData : [
-        {subject: "Customer service", email: "test@test.com", orderRef: "1234567890", message: "This is a test message"},
-        {subject: "Customer service", email: "test@test.com", message: "This is a test message"},
-        {subject: "Customer service", email: "test@test.com", message: "This is a test message"},
-    ],
 }
