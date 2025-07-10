@@ -12,6 +12,9 @@
 //            |___/
 //
 
+const { on } = require('events');
+const htmlReporter = require('./reporter');
+
 module.exports = {
   // An array of folders (excluding subfolders) where your tests are located;
   // if this is not specified, the test source must be passed as the second argument to the test runner.
@@ -68,23 +71,74 @@ module.exports = {
       disable_error_log: false,
       launch_url: 'https://nightwatchjs.org',
 
+  screenshots: {
+    enabled: true,
+    path: './screenshots',
+    on_failure: true,
+    on_timeout: true,
+    on_assertion_failure: true,
+    on_command_failure: true,
+    on_test_failure: true,
+    on_error: true,
+    filename_format: (timestamp, screenshot) => {
+      const ts = new Date().toISOString().replace(/[:.]/g, '-');
+      const name = screenshot?.testName || screenshot?.testcase || 'test';
+      return `screenshot-${name.replace(/\s+/g, '_')}-${ts}.png`;
+    }
+  },
+
+  reporter: [
+    htmlReporter,
+    ['json', { 
+      output_folder: './tests_output',
+      theme: 'compact',
+      launchReport: true,
       screenshots: {
         enabled: true,
-        path: './screenshots',
-        on_failure: true
-      },
+        on_failure: true,
+        path: './screenshots'
+      }
+    }]
+  ],
 
-      desiredCapabilities: {
-        browserName : 'firefox'
-      },
+  desiredCapabilities: {
+    browserName : 'chrome',
+  },
 
-      webdriver: {
-        start_process: true,
-        server_path: ''
+  webdriver: {
+    start_process: true,
+    server_path: ''
+  }
+},
+
+  chrome: {
+    desiredCapabilities : {
+      browserName : 'chrome',
+      'goog:chromeOptions' : {
+        // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+        //
+        // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
+        w3c: true,
+        args: [
+          '--no-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-gpu',
+          '--headless',
+          '--disable-web-security',
+          '--allow-running-insecure-content',
+          '--start-maximized'
+        ]
       }
     },
 
-    
+    webdriver: {
+      start_process: true,
+      server_path: '',
+      cli_args: [
+        // '--verbose'
+      ]
+    }
+  },
 
     firefox: {
       desiredCapabilities : {

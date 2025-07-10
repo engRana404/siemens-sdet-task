@@ -5,7 +5,13 @@ const contactUsPageCommands = {
             .setValue("@email", email)
             .setValue("@message", message)
             .click("@submitButton");
-    }
+    },
+
+    captureFailureScreenshot: function(name) {
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const filename = `screenshots/contactForm_${name}_${timestamp}.png`;
+        this.api.saveScreenshot(filename);
+    },
 }
 
 
