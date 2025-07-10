@@ -12,7 +12,7 @@ siemens-sdet-task/
 ├── ui-tests/             # NightwatchJS UI tests for My Store
 │   ├── page-objects/     # Page Object Model (no hardcoded selectors)
 │   ├── tests/            # UI test cases for Contact Us and Search
-│   ├── tests_output/          # HTML reports and screenshots
+│   ├── tests_output/     # HTML reports and screenshots
 │   └── ...
 ├── api-tests/            # API tests using Supertest and Jest
 │   ├── tests/            # Tests for mock-user-auth npm module
@@ -116,7 +116,9 @@ CircleCI is configured to run both UI and API tests.
 
 ### ✅ Status Badge:
 
-![CircleCI](https://circleci.com/gh/engRana404/siemens-sdet-task.svg?style=svg)
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/4wDYvJ9Sj85XDA6x4ZiodN/KMpJ5Uq7PrXFY8pqJNsVkt/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/4wDYvJ9Sj85XDA6x4ZiodN/KMpJ5Uq7PrXFY8pqJNsVkt/tree/main)
+
+
 
 ---
 
