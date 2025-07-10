@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="8"
+            failures="14"
+            tests="15">
+
+  <testsuite name="contactFormTests" id="contactFormTests"
+    errors="8" failures="14" hostname="" package="contactFormTests" skipped="0"
+    tests="15" time="289.9" timestamp="">
+  
+    <testcase name="Submit with all required fields filled" classname="contactFormTests" time="5.528" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Submission without Optional Fields" classname="contactFormTests" time="1.715" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Submission with File Upload" classname="contactFormTests" time="1.582" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Submit with missing required field (Email)" classname="contactFormTests" time="1.922" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Submit with invalid email format" classname="contactFormTests" time="2.198" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Submit form without selecting subject" classname="contactFormTests" time="1.775" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Submit form with empty message" classname="contactFormTests" time="1.539" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Submit form with multiple validation errors" classname="contactFormTests" time="17.45" assertions="4">  <failure message="Testing if element &lt;Element [name=@errorAlert]&gt; contains text &#39;There are 3 errors&#39; in 5000ms - expected &#34;contains text &#39;There are 3 errors&#39;&#34; but got: &#34;does not contain &#39;There are 3 errors&#39;&#34; (5381ms)">    at Submit form with multiple validation errors (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:95:21)</failure>
+
+    
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;The message cannot be blank.&#39; in 5000ms - expected &#34;contains text &#39;The message cannot be blank.&#39;&#34; but got: &#34;does not contain &#39;The message cannot be blank.&#39;&#34; (5349ms)">    at Submit form with multiple validation errors (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:97:21)</failure>
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;Please select a subject from the list provided.&#39; in 5000ms - expected &#34;contains text &#39;Please select a subject from the list provided.&#39;&#34; but got: &#34;does not contain &#39;Please select a subject from the list provided.&#39;&#34; (5302ms)">    at Submit form with multiple validation errors (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:98:21)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Submit form with long message (boundary testing)" classname="contactFormTests" time="16.89" assertions="2">  <failure message="Testing if element &lt;Element [name=@errorAlert]&gt; contains text &#39;There is 1 error&#39; in 5000ms - expected &#34;contains text &#39;There is 1 error&#39;&#34; but got: &#34;element could not be located&#34; (5232ms)">    at Submit form with long message (boundary testing) (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:109:21)</failure>
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;The message cannot be blank.&#39; in 5000ms - expected &#34;contains text &#39;The message cannot be blank.&#39;&#34; but got: &#34;element could not be located&#34; (5203ms)">    at Submit form with long message (boundary testing) (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:110:21)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Submit with only whitespace in Message field" classname="contactFormTests" time="12.19" assertions="2">  <failure message="Testing if element &lt;Element [name=@errorAlert]&gt; contains text &#39;There is 1 error&#39; in 5000ms - expected &#34;contains text &#39;There is 1 error&#39;&#34; but got: &#34;element could not be located&#34; (5211ms)">    at Submit with only whitespace in Message field (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:120:21)</failure>
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;The message cannot be blank.&#39; in 5000ms - expected &#34;contains text &#39;The message cannot be blank.&#39;&#34; but got: &#34;element could not be located&#34; (5228ms)">    at Submit with only whitespace in Message field (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:121:21)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Submit with Order Reference exceeding 100 characters" classname="contactFormTests" time="11.78" assertions="2">  <failure message="Testing if element &lt;Element [name=@errorAlert]&gt; contains text &#39;There is 1 error&#39; in 5000ms - expected &#34;contains text &#39;There is 1 error&#39;&#34; but got: &#34;element could not be located&#34; (5406ms)">    at Submit with Order Reference exceeding 100 characters (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:133:21)</failure>
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;The order reference must be 100 characters or less.&#39; in 5000ms - expected &#34;contains text &#39;The order reference must be 100 characters or less.&#39;&#34; but got: &#34;element could not be located&#34; (5244ms)">    at Submit with Order Reference exceeding 100 characters (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:134:21)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Upload an unsupported file type" classname="contactFormTests" time="7.297" assertions="2">
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;The uploaded file type is not supported.&#39; in 5000ms - expected &#34;contains text &#39;The uploaded file type is not supported.&#39;&#34; but got: &#34;does not contain &#39;The uploaded file type is not supported.&#39;&#34; (5442ms)">    at Upload an unsupported file type (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:147:21)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Submit Contact Form with Large File" classname="contactFormTests" time="146.5" assertions="2">  <failure message="Testing if element &lt;Element [name=@errorAlert]&gt; contains text &#39;There is 1 error&#39; in 5000ms - expected &#34;contains text &#39;There is 1 error&#39;&#34; but got: &#34;element could not be located&#34; (5225ms)">    at Submit Contact Form with Large File (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:159:21)</failure>
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;File size exceeds the limit&#39; in 5000ms - expected &#34;contains text &#39;File size exceeds the limit&#39;&#34; but got: &#34;element could not be located&#34; (5289ms)">    at Submit Contact Form with Large File (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:160:21)</failure>
+
+    
+    </testcase>
+  
+    <testcase name="Spam protection test (submit form repeatedly)" classname="contactFormTests" time="58.88" assertions="2">  <failure message="Testing if element &lt;Element [name=@errorAlert]&gt; contains text &#39;There is 1 error&#39; in 5000ms - expected &#34;contains text &#39;There is 1 error&#39;&#34; but got: &#34;element could not be located&#34; (5259ms)">    at Spam protection test (submit form repeatedly) (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:196:21)</failure>
+
+      <failure message="Testing if element &lt;Element [name=@errorListItem]&gt; contains text &#39;An error occurred while sending the message.&#39; in 5000ms - expected &#34;contains text &#39;An error occurred while sending the message.&#39;&#34; but got: &#34;element could not be located&#34; (5283ms)">    at Spam protection test (submit form repeatedly) (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:197:21)</failure>
+
+    
+    <error message="Testing if element [33m&lt;Element [name=@errorListItem]&gt;[39m contains text [33m&#39;An error occurred while sending the message.&#39;[39m in 5000ms - expected [32m&#34;contains text &#39;An error occurred while sending the message.&#39;&#34;[39m but got: [31m&#34;element could not be located&#34;[39m [90m(5283ms)[39m" type="error"><![CDATA[
+    Error
+    at Command.executeCommand (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\page-object\command-wrapper.js:281:22)
+    at Object.containsText (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\page-object\command-wrapper.js:86:27)
+    at Proxy.&lt;anonymous&gt; (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\api\index.js:161:30)
+    at Spam protection test (submit form repeatedly) (D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:197:21)
+    at Context.call (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\testsuite\context.js:528:43)
+    at TestCase.run (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\testsuite\testcase.js:58:31)
+    at Runnable.__runFn (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\testsuite\index.js:842:80)
+    at Runnable.run (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\testsuite\runnable.js:126:21)
+    at TestSuite.executeRunnable (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\testsuite\index.js:1003:49)
+    at TestSuite.handleRunnable (D:\SDET\siemens-sdet-task\ui_tests\node_modules\nightwatch\lib\testsuite\index.js:1018:33)
+    ]]></error>
+    
+    </testcase>
+  
+    <testcase name="Form Resubmission after Error" classname="contactFormTests" time="2.716" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@contactSubject]&gt;: Timed out while waiting for element &#34;#id_contact&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@email]&gt;: Timed out while waiting for element &#34;#email&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@message]&gt;: Timed out while waiting for element &#34;#message&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .click() command on &lt;Element [name=@submitButton]&gt;: Timed out while waiting for element &#34;#submitMessage&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@contactSubject]&gt;: Timed out while waiting for element &#34;#id_contact&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@email]&gt;: Timed out while waiting for element &#34;#email&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@message]&gt;: Timed out while waiting for element &#34;#message&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .click() command on &lt;Element [name=@submitButton]&gt;: Timed out while waiting for element &#34;#submitMessage&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

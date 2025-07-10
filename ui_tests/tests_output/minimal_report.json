@@ -1,1 +1,1 @@
-{"modules":{"contactFormTests":{"modulePath":"D:\\SDET\\siemens-sdet-task\\ui_tests\\tests\\contactFormTests.js","status":"pass"}}}
+{"modules":{"HomepageSearchTests":{"modulePath":"D:\\SDET\\siemens-sdet-task\\ui_tests\\tests\\HomepageSearchTests.js","status":"fail"},"contactFormTests":{"modulePath":"D:\\SDET\\siemens-sdet-task\\ui_tests\\tests\\contactFormTests.js","status":"fail"}}}

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="HomepageSearchTests" id="HomepageSearchTests"
+    errors="0" failures="1" hostname="" package="HomepageSearchTests" skipped="0"
+    tests="1" time="6.884" timestamp="">
+  
+    <testcase name="Search for keyword on homepage and verify results" classname="HomepageSearchTests" time="1.709" assertions="7">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="Failed [ok]: (⚠ Not matched: &#34;faded short sleeves t-shirt&#34;) - expected &#34;true&#34; but got: &#34;false&#34; (0ms)">    at NightwatchAPI.&lt;anonymous&gt; (D:\SDET\siemens-sdet-task\ui_tests\tests\HomepageSearchTests.js:34:40)</failure>
+<system-out>[[ATTACHMENT|D:\SDET\siemens-sdet-task\ui_tests\screenshots\screenshot-test-2025-07-10T17-46-59-066Z.png]]</system-out>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@contactSubject]&gt;: Timed out while waiting for element &#34;#id_contact&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@email]&gt;: Timed out while waiting for element &#34;#email&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@message]&gt;: Timed out while waiting for element &#34;#message&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .click() command on &lt;Element [name=@submitButton]&gt;: Timed out while waiting for element &#34;#submitMessage&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@contactSubject]&gt;: Timed out while waiting for element &#34;#id_contact&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@email]&gt;: Timed out while waiting for element &#34;#email&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .setValue() command on &lt;Element [name=@message]&gt;: Timed out while waiting for element &#34;#message&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+ NoSuchElementError
+   An error occurred while running .click() command on &lt;Element [name=@submitButton]&gt;: Timed out while waiting for element &#34;#submitMessage&#34; with &#34;css selector&#34; to be present for 5000 milliseconds.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    D:\SDET\siemens-sdet-task\ui_tests\tests\contactFormTests.js:192
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     190 |         for (let i = 0; i &lt; 5; i++) {
+     191 |             this.contactPage
+     192 |                 .fillRequiredFieldsAndSubmit(data.subject, data.email, data.message) 
+     193 |                 .navigate(); // Navigate back to the form for the next submission
+     194 |         }
+    ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
