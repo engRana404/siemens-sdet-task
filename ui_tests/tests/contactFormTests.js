@@ -173,7 +173,8 @@ module.exports = {
         const data = testData.requiredFields;
         for (let i = 0; i < 5; i++) {
             this.contactPage.fillRequiredFieldsAndSubmit(data.subject, data.email, data.message);
-            this.contactPage.refresh(); // Refresh the page to reset the form
+            this.contactPage.end();
+            this.contactPage.navigate(); // Navigate back to the form for the next submission
         }
         this.contactPage.verify.containsText("@errorAlert", testData.messages.errorMessage);
         this.contactPage.verify.containsText("@errorListItem", testData.messages.ErrorOccurred);
